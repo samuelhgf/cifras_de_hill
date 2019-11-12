@@ -31,6 +31,8 @@ for i in range(int(len(original_message) / matrix_length)):
 
 matrix_num_crip = []
 
+cripted_message = ""
+
 line_counter = 0
 for i in range(int(len(original_message) / matrix_length)):
     result_column = []
@@ -41,16 +43,10 @@ for i in range(int(len(original_message) / matrix_length)):
             sum_element_with_letter += (element * message_map[line_counter][element_counter])
             element_counter += 1
 
-        result_column.append(sum_element_with_letter)
+        cripted_message += alfabeto[sum_element_with_letter % 26]
 
     line_counter += 1
     matrix_num_crip.append(result_column)
 
-cripted_message = ""
-
-
-for column in matrix_num_crip:
-    for i in column:
-        cripted_message += alfabeto[i % 26]
 
 print(cripted_message)
