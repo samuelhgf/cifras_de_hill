@@ -9,7 +9,7 @@ alphabet = ['Z']
 for x in range(65, 90):
     alphabet.append(chr(x))
 
-#Populate the code_matrix with a list contains the numbers of each line
+#Populates the code_matrix with a list contains the numbers of each line
 for i in range(matrix_length):
     code_matrix.append(
         list(map(int, input("Digite a linha %d separada por espaços entre os numeros: " % (i + 1)).split(" "))))
@@ -25,7 +25,7 @@ elif len(original_message) < matrix_length:
     while matrix_length % len(original_message) != 0:
         original_message += original_message[len(original_message) - 1]
 
-#Separes as a matrix with the number of each letter according the alphabet created previously
+#Separetes as a matrix with the number of each letter according the alphabet created previously
 counter = 0
 for i in range(int(len(original_message) / matrix_length)):
     column = []
@@ -35,7 +35,7 @@ for i in range(int(len(original_message) / matrix_length)):
 
     message_map.append(column)
 
-#Make the encrypted message using each line of the code and each list in the message_map as a multiplication of matrix
+#Makes the encrypted message using each line of the code and each list in the message_map as a multiplication of matrix
 line_counter = 0
 for i in range(int(len(original_message) / matrix_length)):
     for line in code_matrix:
@@ -49,5 +49,5 @@ for i in range(int(len(original_message) / matrix_length)):
 
     line_counter += 1
 
-#Show the encrypted message to the user
+#Shows the encrypted message to the user
 print(encrypted_message)
